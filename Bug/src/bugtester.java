@@ -58,7 +58,7 @@ public class bugtester {
 			private void Tick() {
 				ticks++;
 				if((ticks % 2) == 0) {
-					component.update(frame.getGraphics());
+//					component.update(frame.getGraphics());
 				BugComponent component = new BugComponent(creatures);
 				frame.add(component);
 				frame.setVisible(true);

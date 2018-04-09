@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -15,6 +14,7 @@ import javax.swing.JComponent;
  * Draws and redraws the bug to an x y location
  */
 
+@SuppressWarnings("serial")
 public class BugComponent extends JComponent {
 	public Creatures creat; 
 	public BugComponent(Creatures creat) {
@@ -25,17 +25,17 @@ public class BugComponent extends JComponent {
 	 * 
 	 */
 	public synchronized void paintComponent(Graphics g){
-		Graphics2D g2 = (Graphics2D) g ; 
+ 		Graphics2D g2 = (Graphics2D) g ; 
 		if(SplatScore.getisGameinProgress()) {
 		ArrayList<Creature> creatures = creat.getCreatures();
 		Random randgen = new Random();
 		for (Creature creature : creatures) {
-			int move = randgen.nextInt(500);
+			int move = randgen.nextInt(1000);
 			int turn = randgen.nextInt(10000);
 			if(turn == 0) {
 				creature.setOrientation(randgen.nextInt(3) + 1);
 			}
-			if(move == 0) {
+			if(move == 0) {                          
 				creature.move();
 			}
 			creature.getCreatureGraphic(g2);

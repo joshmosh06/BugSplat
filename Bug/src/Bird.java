@@ -13,10 +13,8 @@ import java.util.Random;
  */
 public class Bird extends Creature {
 	public static final int SCORE_VALUE = 5;
-	private Random randgen;
 	public Bird(int xPos, int yPos, int orientation ,Creatures creat) {
 		super(xPos, yPos, orientation,creat);
-		randgen = new Random();
 		super.moveAmount=20;
 		super.col1 = Color.WHITE;
 		super.col2 = Color.RED;
